@@ -2,6 +2,7 @@
  * @format
  * @flow strict-local
  */
+import * as React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -19,7 +20,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import{Hello} from './components/Hello';
+import { Hello } from '../components/Hello';
 
 export default function HomeScreen() {
   return (
@@ -36,9 +37,6 @@ export default function HomeScreen() {
             </View>
           )}
           <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Hello name="World" enthusiasmLevel={1} /> 
-            </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
               <Text style={styles.sectionDescription}>
