@@ -11,6 +11,7 @@ import {
   StatusBar,
   Dimensions
 } from 'react-native';
+import DatePicker from 'react-native-datepicker';
 import { 
   CheckBox, 
   Input, 
@@ -48,6 +49,7 @@ class SignUpScreen extends React.Component<IProps, IState> {
               <Input
                 placeholder='First name'
                 inputStyle={{ 
+                  fontFamily: 'Gill Sans',
                   marginHorizontal: 10,
                   color: '#363A44',
                 }}
@@ -62,6 +64,7 @@ class SignUpScreen extends React.Component<IProps, IState> {
               <Input
                 placeholder='Surname'
                 inputStyle={{ 
+                  fontFamily: 'Gill Sans',
                   marginHorizontal: 10,
                   color: '#363A44',
                 }}
@@ -73,9 +76,50 @@ class SignUpScreen extends React.Component<IProps, IState> {
                   height: 50
                 }}
               />
+              <DatePicker
+                style={{
+                  width: '100%',
+                  paddingHorizontal: 10,
+                  marginVertical: 10,
+                  alignSelf: 'center'
+                }}
+                showIcon={false}
+                mode="date"
+                placeholder="Date of birth"
+                format="YYYY-MM-DD"
+                minDate="0000-05-01"
+                maxDate="2030-06-01"
+                confirmBtnText="Confirm"
+                cancelBtnText="Cancel"
+                iconComponent={
+                  <Icon
+                    name='calendar'
+                    type='feather'
+                    size={24}
+                    color={colors.ocean1}
+                  />
+                }
+                customStyles={{
+                  placeholderText: {
+                    fontFamily: 'Gill Sans',
+                    fontSize: 18,
+                    paddingHorizontal: 10,
+                    alignSelf: 'flex-start'
+                  },
+                  dateInput: {
+                    fontFamily: 'Gill Sans',
+                    fontSize: 100,
+                    borderWidth: 1,
+                    borderColor: '#CAD3DF',
+                    height: 50,
+                    borderRadius: 5
+                 }
+                }}
+              />
               <Input
                 placeholder='Email'
                 inputStyle={{ 
+                  fontFamily: 'Gill Sans',
                   marginHorizontal: 10,
                   color: '#363A44',
                 }}
@@ -91,6 +135,7 @@ class SignUpScreen extends React.Component<IProps, IState> {
                 placeholder='Password'
                 secureTextEntry={true}
                 inputStyle={{ 
+                  fontFamily: 'Gill Sans',
                   marginHorizontal: 10,
                   color: '#363A44',
                 }}
@@ -112,10 +157,10 @@ class SignUpScreen extends React.Component<IProps, IState> {
                 }
               />
               <Input
-                placeholder='Password Confirmation'
-                
+                placeholder='Password Confirmation' 
                 secureTextEntry={true}
                 inputStyle={{ 
+                  fontFamily: 'Gill Sans',
                   marginHorizontal: 10,
                   color: '#363A44',
                 }}

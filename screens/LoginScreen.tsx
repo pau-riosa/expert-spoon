@@ -48,8 +48,8 @@ class LoginScreen extends React.Component<IProps, IState> {
               <Input
                 placeholder='Email'
                 inputStyle={{ 
-                  marginHorizontal: 10,
-                  color: '#363A44',
+                  fontFamily: 'Gill Sans',
+                  marginHorizontal: 10
                 }}
                 inputContainerStyle={{
                   borderWidth: 1,
@@ -70,7 +70,8 @@ class LoginScreen extends React.Component<IProps, IState> {
                 placeholder='Password'
                 secureTextEntry={true}
                 inputStyle={{ 
-                  marginHorizontal: 10,
+                  fontFamily: 'Gill Sans',
+                  marginHorizontal: 10
                 }}
                 inputContainerStyle={{
                   borderWidth: 1,

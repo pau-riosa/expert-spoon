@@ -41,8 +41,8 @@ class ForgotPasswordScreen extends React.Component<IProps, IState> {
             <Input
               placeholder='Email'
               inputStyle={{ 
-                marginHorizontal: 10,
-                color: '#363A44',
+                fontFamily: 'Gill Sans',
+                marginHorizontal: 10
               }}
               inputContainerStyle={{
                 borderWidth: 1,
