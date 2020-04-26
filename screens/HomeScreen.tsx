@@ -6,103 +6,98 @@ import * as React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
   StatusBar,
+  Dimensions
 } from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { Button, Icon } from 'react-native-elements'
+import {colors} from '../assets'
 
 import { CustomButton } from '../components/CustomButton';
 
 export default function HomeScreen({navigation}) {
   return (
-     <> 
+    <> 
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <CustomButton navigation={navigation} handlePress={() => navigation.navigate('Default')} />  
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.flex6} >
+          <Icon
+            raised
+            name='heartbeat'
+            type='font-awesome'
+            color='#f50'
+            />
+          <Text style={styles.mainText}>Twinkle Teeth</Text>
+        </View>
+        <View style={styles.flex1}>
+          <Button
+            icon={
+              <Icon
+                name='heartbeat'
+                type='font-awesome'
+                color='#363A44'
+              />
+            }
+            titleStyle={styles.subText}
+            type={'outline'}
+            buttonStyle={{
+              height: 60,
+              borderWidth: 1,
+              borderColor: '#363A44' 
+            }}
+            title="Login"
+          />
+          <Button
+            icon={
+              <Icon
+                name='heartbeat'
+                type='font-awesome'
+                color='#363A44'
+              />
+            }
+            titleStyle={styles.subText}
+            type={'outline'}
+            buttonStyle={{
+              height: 60,
+              borderWidth: 1,
+              borderColor: '#363A44' 
+            }}
+            title="Sign up"
+          />
+        </View>
       </SafeAreaView>
     </>
-
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  flex6: {
+    flex: 6,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.ocean1
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  flex1: {
+    flex: 1.5,
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    paddingHorizontal: 15,
+    backgroundColor: colors.ocean1
   },
-  body: {
-    backgroundColor: Colors.white,
+  mainText: {
+    fontFamily: 'Gill Sans',
+    fontSize: 50,
+    fontWeight: '300',
+    color: '#363A44'
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
+  subText: {
+    marginHorizontal: 10, 
+    fontFamily: 'Gill Sans',
     fontSize: 18,
     fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+    color: '#363A44'
+  }
 });
 
