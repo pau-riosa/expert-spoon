@@ -18,9 +18,9 @@ import { CustomButton } from '../components/CustomButton';
 
 export default function HomeScreen({navigation}) {
   return (
-    <> 
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}> 
+      <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
+      <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean1 }}>
         <View style={styles.flex6} >
           <Icon
             raised
@@ -67,7 +67,7 @@ export default function HomeScreen({navigation}) {
           />
         </View>
       </SafeAreaView>
-    </>
+    </View>
   );
 };
 
