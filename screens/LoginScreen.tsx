@@ -102,9 +102,9 @@ class LoginScreen extends React.Component<IProps, IState> {
             />
             </View>
             <View style={{flex: 1, alignItems: 'center'}} >
-              <Text style={[styles.text, { color: '#398BED'}]}>Forgot your password?</Text>   
+              <Text style={[styles.text, { color: '#398BED'}]}onPress={() => this.props.navigation.navigate("FORGOT PASSWORD")}>Forgot your password?</Text>   
               <Text style={[styles.text]}>Dont'have an account?
-                <Text style={{ color: '#398BED' }}> Sign Up</Text> 
+                <Text style={{ color: '#398BED' }} onPress={() => this.props.navigation.navigate("SIGN UP")}> Sign Up</Text> 
               </Text>            
             </View>
           </View>
