@@ -185,6 +185,10 @@ class SignUpScreen extends React.Component<IProps, IState> {
                 title='I have read the User Agreement'
                 checked={true}
                 fontFamily='Gill Sans'
+                containerStyle={{
+                  backgroundColor: '#ffffff',
+                  borderColor: '#ffffff'
+                }}
               />
 
               <Button
