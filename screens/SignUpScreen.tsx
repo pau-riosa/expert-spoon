@@ -11,7 +11,12 @@ import {
   StatusBar,
   Dimensions
 } from 'react-native';
-import { Input, Button, Icon } from 'react-native-elements'
+import { 
+  CheckBox, 
+  Input, 
+  Button, 
+  Icon 
+} from 'react-native-elements'
 import {colors} from '../assets'
 
 import { CustomButton } from '../components/CustomButton';
@@ -20,10 +25,10 @@ export interface Props {
   navigation: any;
 }
 
-class LoginScreen extends React.Component<IProps, IState> {
+class SignUpScreen extends React.Component<IProps, IState> {
   render() {
     return (
-      <View style={{ flex: 1 }}> 
+      <View style={{ flex: 1, flexDirection: 'column' }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
           <View style={styles.logoContainer} >
@@ -36,15 +41,38 @@ class LoginScreen extends React.Component<IProps, IState> {
             />
             <Text style={styles.mainText}>Twinkle Teeth</Text>
           </View>
-          <View style={styles.flex1}>
-            <View style={{ 
-              flex: 1,
-              justifyContent: 'center',
-              marginBottom: 10,
-              padding: 5,
-              }}
-            >
-              <Text style={[styles.subText, {alignSelf: 'center', fontSize: 25, marginVertical: 30}]}>Sign In</Text>
+          <View style={{flex: 1}}>
+            <Text style={[styles.subText, {alignSelf: 'center', fontSize: 25, marginVertical: 30}]}>Sign Up</Text>
+          </View>
+          <View style={styles.flex6}>
+              <Input
+                placeholder='First name'
+                inputStyle={{ 
+                  marginHorizontal: 10,
+                  color: '#363A44',
+                }}
+                inputContainerStyle={{
+                  borderWidth: 1,
+                  borderColor: '#CAD3DF',
+                  borderRadius: 5,
+                  marginVertical: 10,
+                  height: 50
+                }}
+              />
+              <Input
+                placeholder='Surname'
+                inputStyle={{ 
+                  marginHorizontal: 10,
+                  color: '#363A44',
+                }}
+                inputContainerStyle={{
+                  borderWidth: 1,
+                  borderColor: '#CAD3DF',
+                  borderRadius: 5,
+                  marginVertical: 10,
+                  height: 50
+                }}
+              />
               <Input
                 placeholder='Email'
                 inputStyle={{ 
@@ -58,36 +86,63 @@ class LoginScreen extends React.Component<IProps, IState> {
                   marginVertical: 10,
                   height: 50
                 }}
-                leftIcon={
-                  <Icon
-                    name='email'
-                    size={24}
-                    color={colors.ocean1}
-                  />
-                }
               />
               <Input
                 placeholder='Password'
                 secureTextEntry={true}
                 inputStyle={{ 
                   marginHorizontal: 10,
+                  color: '#363A44',
                 }}
                 inputContainerStyle={{
                   borderWidth: 1,
-                  borderRadius: 5,
                   borderColor: '#CAD3DF',
+                  borderRadius: 5,
                   marginVertical: 10,
+                  paddingRight: 10,
                   height: 50
                 }}
-                leftIcon={
+                rightIcon={
                   <Icon
-                    name='lock'
+                    name='eye'
+                    type='font-awesome'
                     size={24}
                     color={colors.ocean1}
                   />
                 }
               />
-            <Button
+              <Input
+                placeholder='Password Confirmation'
+                
+                secureTextEntry={true}
+                inputStyle={{ 
+                  marginHorizontal: 10,
+                  color: '#363A44',
+                }}
+                inputContainerStyle={{
+                  borderWidth: 1,
+                  borderColor: '#CAD3DF',
+                  borderRadius: 5,
+                  marginVertical: 10,
+                  paddingRight: 10,
+                  height: 50
+                }}
+                rightIcon={
+                  <Icon
+                    name='eye'
+                    type='font-awesome'
+                    size={24}
+                    color={colors.ocean1}
+                  />
+                }
+              /> 
+              <CheckBox
+                title='I have read the User Agreement'
+                checked={true}
+                fontFamily='Gill Sans'
+              />
+
+              <Button
               titleStyle={styles.subText}
               buttonStyle={{
                 height: 60,
@@ -97,37 +152,31 @@ class LoginScreen extends React.Component<IProps, IState> {
                 borderColor: colors.ocean1,
                 backgroundColor: colors.ocean1,
               }}
-              title="LOGIN"
-              onPress={() => this.props.navigation.navigate('LOGIN')}
+              title="SIGN UP"
+              onPress={() => this.props.navigation.navigate('SIGN UP')}
             />
-            </View>
-            <View style={{flex: 1, alignItems: 'center'}} >
-              <Text style={[styles.text, { color: '#398BED'}]}>Forgot your password?</Text>   
-              <Text style={[styles.text]}>Dont'have an account?
-                <Text style={{ color: '#398BED' }}> Sign Up</Text> 
-              </Text>            
-            </View>
           </View>
+          <View style={{ flex: 1 }}/> 
         </SafeAreaView>
       </View>
     );
   } 
 };
-export default LoginScreen;
+export default SignUpScreen;
 
 const styles = StyleSheet.create({
   logoContainer: {
-    flex: .2,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.ocean5
   },
-  flex1: {
-    flex: 1,
+  flex6: {
+    flex: 5,
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    paddingHorizontal: 15,
+    marginHorizontal: 15,
+    marginVertical: 30,
     backgroundColor: colors.ocean5
   },
   mainText: {
@@ -137,7 +186,6 @@ const styles = StyleSheet.create({
     color: '#363A44'
   },
   subText: {
-    marginHorizontal: 10, 
     fontFamily: 'Gill Sans',
     fontSize: 18,
     fontWeight: '500',

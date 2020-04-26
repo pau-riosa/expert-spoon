@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
+import SignUpScreen from './screens/SignUpScreen';
 
 import {colors} from './assets'
 
@@ -16,15 +17,24 @@ function App() {
     <NavigationContainer>
       <SafeAreaView style={{ flex: 0, backgroundColor: colors.ocean1 }} />
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="HOME"
         screenOptions={{
           headerStyle: { backgroundColor: colors.ocean1 },
         }}
       > 
         <Stack.Screen options={{ 
           headerShown: false 
-        }} name="Home" component={HomeScreen} />
-        <Stack.Screen options={{ headerTitle: ''}} name="Login" component={LoginScreen} />
+        }} name="HOME" component={HomeScreen} />
+        <Stack.Screen options={{ 
+          headerShown: true,
+          headerTitle: '',
+          headerStyle: { backgroundColor: colors.ocean5 },
+        }} name="LOGIN" component={LoginScreen} />
+        <Stack.Screen options={{ 
+          headerShown: true,
+          headerTitle: '',
+          headerStyle: { backgroundColor: colors.ocean5 },
+        }} name="SIGN UP" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
