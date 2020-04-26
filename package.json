@@ -43,6 +43,10 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": ["./jestSetup.js"],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation|react-navigation-redux-helpers|@react-navigation/.*)"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
