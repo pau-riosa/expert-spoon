@@ -20,9 +20,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Hello } from '../components/Hello';
+import { CustomButton } from '../components/CustomButton';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
      <> 
       <StatusBar barStyle="dark-content" />
@@ -37,6 +37,9 @@ export default function HomeScreen() {
             </View>
           )}
           <View style={styles.body}>
+            <View style={styles.sectionContainer}>
+              <CustomButton navigation={navigation} handlePress={() => navigation.navigate('Default')} />  
+            </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
               <Text style={styles.sectionDescription}>
