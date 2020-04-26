@@ -24,9 +24,10 @@ export default function HomeScreen({navigation}) {
         <View style={styles.flex6} >
           <Icon
             raised
-            name='heartbeat'
-            type='font-awesome'
-            color='#f50'
+            name='tooth'
+            size={30}
+            type='material-community'
+            color={colors.ocean1}
             />
           <Text style={styles.mainText}>Twinkle Teeth</Text>
         </View>
