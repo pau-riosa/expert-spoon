@@ -99,7 +99,7 @@ class LoginScreen extends React.Component<IProps, IState> {
                 backgroundColor: colors.ocean1,
               }}
               title="LOGIN"
-              onPress={() => this.props.navigation.navigate('LOGIN')}
+              onPress={() => this.props.navigation.navigate('ROOT')}
             />
             </View>
             <View style={{flex: 1, alignItems: 'center'}} >

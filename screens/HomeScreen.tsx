@@ -43,7 +43,8 @@ class HomeScreen extends React.Component<IProps, IState> {
               buttonStyle={{
                 height: 60,
                 borderWidth: 1,
-                borderColor: '#363A44' 
+                borderColor: colors.ocean3,
+                backgroundColor: colors.ocean3
               }}
               title="LOGIN"
               onPress={() => this.props.navigation.navigate('LOGIN')}
