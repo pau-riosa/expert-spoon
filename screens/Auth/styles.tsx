@@ -5,6 +5,105 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../assets';
 
+export const signup = StyleSheet.create({
+  text: {
+    fontFamily: 'Gill Sans',
+    fontSize: 17,
+    marginVertical: 2,
+  },
+  mainText: {
+    fontFamily: 'Gill Sans',
+    fontSize: 50,
+    fontWeight: '300',
+    color: '#363A44',
+  },
+  flex6: {
+    flex: 5,
+    flexDirection: 'column',
+    marginHorizontal: 15,
+    marginVertical: 30,
+    backgroundColor: colors.ocean5,
+  },
+  flex1Column: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+  scrollViewBackgroundColor: {
+    backgroundColor: colors.ocean5,
+  },
+  safeAreaView: {
+    flex: 1,
+    backgroundColor: colors.ocean1,
+  },
+  flex1: {
+    flex: 1,
+  },
+  subText: {
+    fontFamily: 'Gill Sans',
+    fontSize: 15,
+    fontWeight: '500',
+    color: '#ffffff',
+  },
+  subTextStyle: {
+    alignSelf: 'center',
+    fontSize: 25,
+    marginVertical: 30,
+    color: '#363A44',
+  },
+  logoContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.ocean5,
+  },
+  inputStyle: {
+    fontFamily: 'Gill Sans',
+    marginHorizontal: 10,
+    color: '#363A44',
+  },
+  inputContainerStyle: {
+    borderWidth: 1,
+    borderColor: '#CAD3DF',
+    borderRadius: 5,
+    marginVertical: 10,
+    paddingRight: 10,
+    height: 50,
+  },
+  datepickerStyle: {
+    width: '100%',
+    paddingHorizontal: 10,
+    marginVertical: 10,
+    alignSelf: 'center',
+  },
+  datepickerPlaceholderText: {
+    fontFamily: 'Gill Sans',
+    fontSize: 18,
+    paddingHorizontal: 10,
+    alignSelf: 'flex-start',
+  },
+  datepickerDateInput: {
+    fontFamily: 'Gill Sans',
+    fontSize: 100,
+    borderWidth: 1,
+    borderColor: '#CAD3DF',
+    height: 50,
+    borderRadius: 5,
+  },
+  checkBoxContainerStyle: {
+    backgroundColor: '#ffffff',
+    borderColor: '#ffffff',
+  },
+  buttonStyle: {
+    height: 60,
+    borderWidth: 1,
+    marginHorizontal: 10,
+    marginVertical: 10,
+    borderColor: colors.ocean1,
+    backgroundColor: colors.ocean1,
+  },
+});
+
 export const login = StyleSheet.create({
   flex1: {
     flex: 1,

@@ -4,7 +4,7 @@ import * as React from 'react';
 import HomeScreen from '../screens/Auth/HomeScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import LoginScreen from '../screens/Auth/LoginScreen';
-import SignUpScreen from '../screens/SignUpScreen';
+import SignUpScreen from '../screens/Auth/SignUpScreen';
 // colors 
 import {colors} from '../assets'
 // navigator 
