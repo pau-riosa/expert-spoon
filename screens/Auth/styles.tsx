@@ -5,6 +5,78 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../assets';
 
+export const forgotpassword = StyleSheet.create({
+  flex1: {
+    flex: 1,
+  },
+  flex1Container: {
+    flex: 1,
+    flexDirection: 'column',
+    paddingHorizontal: 15,
+    backgroundColor: colors.ocean5,
+  },
+  safeAreaView: {
+    flex: 1,
+    backgroundColor: colors.ocean5,
+  },
+  subTextStyle: {
+    alignSelf: 'center',
+    fontSize: 25,
+    marginVertical: 30,
+  },
+  subText: {
+    marginHorizontal: 10,
+    fontFamily: 'Gill Sans',
+    fontSize: 18,
+    fontWeight: '500',
+    color: colors.black,
+  },
+  buttonText: {
+    marginHorizontal: 10,
+    fontFamily: 'Gill Sans',
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  text: {
+    fontFamily: 'Gill Sans',
+    fontSize: 17,
+    marginVertical: 2,
+  },
+  mainText: {
+    fontFamily: 'Gill Sans',
+    fontSize: 50,
+    fontWeight: '300',
+    color: colors.black,
+  },
+  logoContainer: {
+    flex: 0.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.ocean5,
+  },
+  inputStyle: {
+    fontFamily: 'Gill Sans',
+    marginHorizontal: 10,
+    color: colors.black,
+  },
+  inputContainerStyle: {
+    borderWidth: 1,
+    borderColor: '#CAD3DF',
+    borderRadius: 5,
+    marginVertical: 10,
+    paddingRight: 10,
+    height: 50,
+  },
+  buttonStyle: {
+    height: 60,
+    borderWidth: 1,
+    marginHorizontal: 10,
+    marginVertical: 10,
+    borderColor: colors.ocean1,
+    backgroundColor: colors.ocean1,
+  },
+});
 export const signup = StyleSheet.create({
   text: {
     fontFamily: 'Gill Sans',

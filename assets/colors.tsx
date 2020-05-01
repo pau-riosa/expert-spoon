@@ -7,4 +7,5 @@ export default {
   primaryBlue: '#398BED',
   primaryGrey: '#CDCDCD',
   white: '#FFFFFF',
+  black: '#363A44',
 };
