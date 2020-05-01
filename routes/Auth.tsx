@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 // Screens 
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/Auth/HomeScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen';
