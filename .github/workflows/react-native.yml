@@ -1,0 +1,14 @@
+name: Build Android and iOS
+on: push
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: install npm dependencies
+        run: |
+          yarn install 
+      - name: run tests
+        run: |
+          yarn test
