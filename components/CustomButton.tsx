@@ -1,33 +1,37 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import {Button} from 'react-native-elements';
 
-export interface Props {
-  name: string;
-  navigation: any;
-  handlePress: () => any;
+export interface IProps {
+  title: string;
+  type: any;
+  titleStyle?: object;
+  buttonStyle?: object;
+  navigation?: any;
+  handlePress?: () => any;
 }
 
-interface State {
-  enthusiasmLevel: number;
-}
+interface IState {}
 
-export class CustomButton extends React.Component<Props, State> {
-  constructor(props: Props) {
+export class CustomButton extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
   }
 
   render() {
     return (     
-      <View style={styles.button}>
+      <>   
         <Button
-          title="Go To Default Page"
-          onPress={this.props.handlePress}
+          title={this.props.title}
+          type={this.props.type}
+          titleStyle={this.props.titleStyle}
+          buttonStyle={this.props.buttonStyle}
+          onPress={() => this.props.handlePress}
         />
-      </View>
+      </>
     );
   }
 }
-
 // styles
 const styles = StyleSheet.create({
   root: {
