@@ -16,7 +16,7 @@ export interface IState {}
 class ForgotPasswordScreen extends React.Component<IProps, IState> {
   render() {
     return (
-      <View style={forgotpassword.flex1}>
+      <View style={forgotpassword.flex1Container}>
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1} />
         <SafeAreaView style={forgotpassword.safeAreaView}>
           <View style={forgotpassword.logoContainer}>
