@@ -29,7 +29,7 @@ export const login = StyleSheet.create({
   },
   textAlignCenter: {
     alignSelf: 'center',
-    fontSize: 25,
+    fontSize: 20,
     marginVertical: 30,
   },
   flex1Center: {
@@ -45,7 +45,7 @@ export const login = StyleSheet.create({
   subText: {
     marginHorizontal: 10,
     fontFamily: 'Gill Sans',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '500',
     color: '#363A44',
   },

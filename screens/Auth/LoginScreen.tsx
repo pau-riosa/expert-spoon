@@ -31,9 +31,7 @@ class LoginScreen extends React.Component<IProps, IState> {
           </View>
           <View style={login.flex1}>
             <View style={login.flex1Center}>
-              <Text style={[login.subText, login.textAlignCenter]}>
-                Sign In
-              </Text>
+              <Text style={[login.subText, login.textAlignCenter]}>LOGIN</Text>
               <Input
                 placeholder="Email"
                 inputStyle={login.inputStyle}
@@ -48,7 +46,7 @@ class LoginScreen extends React.Component<IProps, IState> {
                 leftIcon={<Icon name="lock" size={24} color={colors.ocean1} />}
               />
               <Button
-                titleStyle={login.subText}
+                titleStyle={[login.subText, {color: colors.white}]}
                 buttonStyle={login.buttonStyle}
                 title="LOGIN"
                 onPress={() => this.props.navigation.navigate('ROOT')}
