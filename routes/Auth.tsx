@@ -3,7 +3,7 @@ import * as React from 'react';
 // Screens 
 import HomeScreen from '../screens/Auth/HomeScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
-import LoginScreen from '../screens/LoginScreen';
+import LoginScreen from '../screens/Auth/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 // colors 
 import {colors} from '../assets'

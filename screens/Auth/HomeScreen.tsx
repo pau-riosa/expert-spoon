@@ -5,7 +5,7 @@
 import * as React from 'react';
 import {SafeAreaView, View, Text, StatusBar} from 'react-native';
 import {Button, Icon} from 'react-native-elements';
-import {login} from './styles';
+import {home} from './styles';
 import {colors} from '../../assets';
 export interface IProps {
   navigation: any;
@@ -16,10 +16,10 @@ export interface IState {}
 class HomeScreen extends React.Component<IProps, IState> {
   render() {
     return (
-      <View style={login.flex1Container}>
+      <View style={home.flex1Container}>
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1} />
-        <SafeAreaView style={login.safeAreaView}>
-          <View style={login.flex6}>
+        <SafeAreaView style={home.safeAreaView}>
+          <View style={home.flex6}>
             <Icon
               raised
               name="tooth"
@@ -27,20 +27,20 @@ class HomeScreen extends React.Component<IProps, IState> {
               type="material-community"
               color={colors.ocean1}
             />
-            <Text style={login.mainText}>Twinkle Teeth</Text>
+            <Text style={home.mainText}>Twinkle Teeth</Text>
           </View>
-          <View style={login.flex1}>
+          <View style={home.flex1}>
             <Button
-              titleStyle={login.subText}
+              titleStyle={home.subText}
               type={'outline'}
-              buttonStyle={login.loginButton}
+              buttonStyle={home.loginButton}
               title="Login"
               onPress={() => this.props.navigation.navigate('LOGIN')}
             />
             <Button
-              titleStyle={login.subText}
+              titleStyle={home.subText}
               type={'outline'}
-              buttonStyle={login.signUpButton}
+              buttonStyle={home.signUpButton}
               title="Sign up"
               onPress={() => this.props.navigation.navigate('SIGN UP')}
             />

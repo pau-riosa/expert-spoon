@@ -5,5 +5,5 @@ export default {
   ocean4: '#f2f9ff',
   ocean5: '#ffffff',
   primaryBlue: '#398BED',
-  primaryGrey: '#CDCDCD'
-}
+  primaryGrey: '#CDCDCD',
+};
