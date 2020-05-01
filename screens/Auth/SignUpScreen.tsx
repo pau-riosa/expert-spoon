@@ -26,7 +26,7 @@ class SignUpScreen extends React.Component<IProps, IState> {
             <Icon
               raised
               name="tooth"
-              size={30}
+              size={45}
               type="material-community"
               color={colors.ocean1}
             />

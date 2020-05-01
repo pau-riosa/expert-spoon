@@ -1,4 +1,3 @@
-
 /**
  * @format
  * @flow strict-local
@@ -15,11 +14,12 @@ import {
 import { Input, Button, Icon } from 'react-native-elements'
 import {colors} from '../../assets'
 
-import { CustomButton } from '../components/CustomButton';
+import { CustomButton } from '../../components/CustomButton';
 
-export interface Props {
+export interface IProps {
   navigation: any;
 }
+export interface IState {}
 
 class DashboardScreen extends React.Component<IProps, IState> {
   render() {

@@ -12,7 +12,7 @@ export const forgotpassword = StyleSheet.create({
   flex1Container: {
     flex: 1,
     flexDirection: 'column',
-    paddingHorizontal: 15,
+    marginHorizontal: 5,
     backgroundColor: colors.ocean5,
   },
   safeAreaView: {
@@ -28,7 +28,7 @@ export const forgotpassword = StyleSheet.create({
     marginHorizontal: 10,
     fontFamily: 'Gill Sans',
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '400',
     color: colors.black,
   },
   buttonText: {
@@ -45,7 +45,7 @@ export const forgotpassword = StyleSheet.create({
   mainText: {
     fontFamily: 'Gill Sans',
     fontSize: 50,
-    fontWeight: '300',
+    fontWeight: '400',
     color: colors.black,
   },
   logoContainer: {
@@ -73,6 +73,7 @@ export const forgotpassword = StyleSheet.create({
     borderWidth: 1,
     marginHorizontal: 10,
     marginVertical: 10,
+    borderRadius: 5,
     borderColor: colors.ocean1,
     backgroundColor: colors.ocean1,
   },
@@ -86,14 +87,14 @@ export const signup = StyleSheet.create({
   mainText: {
     fontFamily: 'Gill Sans',
     fontSize: 50,
-    fontWeight: '300',
+    fontWeight: '400',
     color: '#363A44',
   },
   flex6: {
     flex: 5,
     flexDirection: 'column',
-    marginHorizontal: 15,
-    marginVertical: 30,
+    marginHorizontal: 10,
+    marginVertical: 5,
     backgroundColor: colors.ocean5,
   },
   flex1Column: {
@@ -113,7 +114,7 @@ export const signup = StyleSheet.create({
   subText: {
     fontFamily: 'Gill Sans',
     fontSize: 15,
-    fontWeight: '500',
+    fontWeight: '400',
     color: '#ffffff',
   },
   subTextStyle: {
@@ -128,6 +129,7 @@ export const signup = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.ocean5,
+    marginTop: 20,
   },
   inputStyle: {
     fontFamily: 'Gill Sans',
@@ -171,6 +173,7 @@ export const signup = StyleSheet.create({
     borderWidth: 1,
     marginHorizontal: 10,
     marginVertical: 10,
+    borderRadius: 5,
     borderColor: colors.ocean1,
     backgroundColor: colors.ocean1,
   },
@@ -181,13 +184,13 @@ export const login = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-evenly',
-    paddingHorizontal: 15,
+    marginHorizontal: 5,
     backgroundColor: colors.ocean5,
   },
   mainText: {
     fontFamily: 'Gill Sans',
     fontSize: 50,
-    fontWeight: '300',
+    fontWeight: '400',
     color: '#363A44',
   },
   text: {
@@ -217,7 +220,7 @@ export const login = StyleSheet.create({
     marginHorizontal: 10,
     fontFamily: 'Gill Sans',
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '400',
     color: '#363A44',
   },
   safeAreaView: {
@@ -247,6 +250,7 @@ export const login = StyleSheet.create({
     borderWidth: 1,
     marginHorizontal: 10,
     marginVertical: 10,
+    borderRadius: 5,
     borderColor: colors.ocean1,
     backgroundColor: colors.ocean1,
   },
@@ -261,15 +265,17 @@ export const home = StyleSheet.create({
     backgroundColor: colors.ocean1,
   },
   signUpButton: {
-    height: 60,
+    height: 70,
+    borderRadius: 5,
     borderWidth: 1,
     borderColor: '#363A44',
   },
   loginButton: {
-    height: 60,
+    height: 70,
     borderWidth: 1,
-    borderColor: colors.ocean3,
-    backgroundColor: colors.ocean3,
+    borderRadius: 5,
+    borderColor: colors.ocean5,
+    backgroundColor: colors.ocean5,
   },
   flex6: {
     flex: 6,
@@ -288,7 +294,7 @@ export const home = StyleSheet.create({
   mainText: {
     fontFamily: 'Gill Sans',
     fontSize: 50,
-    fontWeight: '300',
+    fontWeight: '400',
     color: '#363A44',
   },
   subText: {

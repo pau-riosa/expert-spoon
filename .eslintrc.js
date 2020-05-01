@@ -1,5 +1,6 @@
 module.exports = {
-  "jest": true,
+  jest: true,
   root: true,
   extends: '@react-native-community',
 };
+
