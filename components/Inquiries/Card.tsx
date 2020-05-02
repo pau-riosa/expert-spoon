@@ -10,7 +10,7 @@ import {colors} from '../../assets';
 export interface IProps {}
 
 interface IState {}
-export class AppointmentCard extends React.Component<IProps, IState> {
+export class InquiryCard extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
   }
@@ -26,19 +26,16 @@ export class AppointmentCard extends React.Component<IProps, IState> {
             <Text style={{marginBottom: 10, fontFamily: 'Roboto-Regular', fontSize: 20, color: colors.black}}>
               Juan Dela Cruz 
             </Text>
-            <Text style={{marginBottom: 10, fontFamily: 'Roboto-Regular', fontSize: 14, color: colors.black}}>
-              2020-04-29   
+            <Text style={{marginBottom: 10, fontFamily: 'Roboto', fontSize: 14, color: colors.black}}>
+              message 
             </Text>
           </View>
           <View style={styles.rightContainer}>
             <Image
-              style={{ width: 100, height: 100, borderRadius: 5}}
+              style={{ width: 50, height: 50, borderRadius: 100}}
               source={{ uri: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80' }}
             />
           </View>
-        </View>
-        <View style={styles.rowDirection}>
-          <Button title="VIEW DETAILS" type="outline" titleStyle={styles.titleStyle} buttonStyle={styles.buttonStyle} />
         </View>
       </Card>
     );
@@ -47,17 +44,18 @@ export class AppointmentCard extends React.Component<IProps, IState> {
 
 const styles = StyleSheet.create({
   containerStyle: {
-    backgroundColor: '#FAFAFA', 
-    shadowColor: '#CDCDCD', 
-    shadowRadius: 5, 
-    shadowOffset: {width: 3, height: 5},
+    backgroundColor: '#FAFAFA',
+    shadowColor: '#CDCDCD',
+    shadowRadius: 5,
+    shadowOffset: {width: 2, height: 2}
   },
   leftContainer: {
     padding: 1, 
     width: '70%',
   },
   rightContainer: { 
-    padding: 1, 
+    padding: 1,
+    alignItems: 'flex-end',
     width: '30%',
   },
   rowDirection: {

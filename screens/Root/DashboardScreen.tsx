@@ -17,6 +17,7 @@ import { Input, Button, Icon } from 'react-native-elements'
 import {colors} from '../../assets'
 
 import { AppointmentCard } from '../../components/Appointment/Card';
+import { InquiryCard } from '../../components/Inquiries/Card';
 
 export interface IProps {
   navigation: any;
@@ -29,64 +30,55 @@ class DashboardScreen extends React.Component<IProps, IState> {
       <View style={{ flex: 1 }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
-          <View style={{ margin: 10}}>
-            <Text>Upcoming Appointments</Text>   
+          <View style={{ marginHorizontal: 15, marginTop: 15 }}>
+            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Upcoming Appointments</Text>   
           </View>
           <View style={styles.horizontalContainer}>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              <View style={styles.scrollViewStyle}>
+              <View style={styles.scrollViewHorizontalStyle}>
                 <AppointmentCard /> 
               </View>
-              <View style={styles.scrollViewStyle}>
+              <View style={styles.scrollViewHorizontalStyle}>
                 <AppointmentCard /> 
               </View>
-              <View style={styles.scrollViewStyle}>
+              <View style={styles.scrollViewHorizontalStyle}>
                 <AppointmentCard /> 
               </View>
-
-              <View style={styles.scrollViewStyle}>
+              <View style={styles.scrollViewHorizontalStyle}>
                 <AppointmentCard /> 
               </View>
             </ScrollView>
           </View> 
-          <View style={{ margin: 10 }}>
-            <Text>Inquiries</Text>   
+          <View style={{ margin: 15 }}>
+            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Patient Inquiries</Text>   
           </View>
           <View style={styles.verticalContainer}>
-            <ScrollView showsHorizontalScrollIndicator={false}>
-              <View style={styles.scrollViewStyle}>
-                <AppointmentCard /> 
-              </View>
-              <View style={styles.scrollViewStyle}>
-                <AppointmentCard /> 
-              </View>
-              <View style={styles.scrollViewStyle}>
-                <AppointmentCard /> 
-              </View>
-              <View style={styles.scrollViewStyle}>
-                <AppointmentCard /> 
-              </View>
-              <View style={styles.scrollViewStyle}>
-                <AppointmentCard /> 
-              </View>
-              <View style={styles.scrollViewStyle}>
-                <AppointmentCard /> 
+            <ScrollView showsVerticalScrollIndicator={false}>
+              <View style={styles.scrollViewVerticalStyle}>
+                <InquiryCard /> 
+                <InquiryCard /> 
+                <InquiryCard /> 
+                <InquiryCard /> 
+                <InquiryCard /> 
+                <InquiryCard /> 
+                <InquiryCard /> 
+                <InquiryCard /> 
               </View>
             </ScrollView>
           </View>
-
         </SafeAreaView>
       </View>
     );
   } 
 };
 export default DashboardScreen;
-var deviceWidth = Dimensions.get('window').width;
-var deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   verticalContainer: {
     justifyContent: "center",
     alignItems: "center",
+    flex: 1, 
     backgroundColor: "#e5e5e5",
   },
   horizontalContainer: {
@@ -102,7 +94,12 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: "bold"
   },
-  scrollViewStyle: {
+  scrollViewVerticalStyle: {
+    backgroundColor: 'white',
+    flex: 1,
+    flexDirection: 'column'
+  },
+  scrollViewHorizontalStyle: {
     width: deviceWidth,
     backgroundColor: 'white',
     justifyContent: 'center',
@@ -110,7 +107,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   logoContainer: {
-    flex: .2,
+    flex: 0.2,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
