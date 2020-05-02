@@ -7,6 +7,8 @@ import {StyleSheet, View} from 'react-native';
 import {Button, Icon} from 'react-native-elements';
 // Screens
 import DashboardScreen from '../screens/Root/DashboardScreen';
+import AppointmentScreen from '../screens/Root/AppointmentScreen';
+import InquiryScreen from '../screens/Root/InquiryScreen';
 // colors
 import {colors} from '../assets';
 // navigation
@@ -37,7 +39,7 @@ export default function Root() {
       />
       <BottomTab.Screen
         name="CALENDAR"
-        component={DashboardScreen}
+        component={AppointmentScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
@@ -47,7 +49,7 @@ export default function Root() {
       />
       <BottomTab.Screen
         name="MESSAGES"
-        component={DashboardScreen}
+        component={InquiryScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
