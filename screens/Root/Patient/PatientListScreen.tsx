@@ -14,15 +14,15 @@ import {
   Image
 } from 'react-native';
 import { Input, Button, Icon } from 'react-native-elements'
-import {colors} from '../../assets'
-import { PatientCard } from '../../components/Patients/Card';
+import {colors} from '../../../assets'
+import { PatientCard } from '../../../components/Patients/Card';
 
 export interface IProps {
   navigation: any;
 }
 export interface IState {}
 
-class PatientScreen extends React.Component<IProps, IState> {
+class PatientListScreen extends React.Component<IProps, IState> {
   render() {
     return (
       <View style={{ flex: 1 }}> 
@@ -34,14 +34,14 @@ class PatientScreen extends React.Component<IProps, IState> {
           <View style={styles.verticalContainer}>
             <ScrollView showsVerticalScrollIndicator={false}>
               <View style={styles.scrollViewVerticalStyle}>
-                <PatientCard /> 
-                <PatientCard /> 
-                <PatientCard /> 
-                <PatientCard /> 
-                <PatientCard /> 
-                <PatientCard /> 
-                <PatientCard /> 
-                <PatientCard /> 
+                <PatientCard {...this.props}/> 
+                <PatientCard {...this.props}/> 
+                <PatientCard {...this.props}/> 
+                <PatientCard {...this.props}/> 
+                <PatientCard {...this.props}/> 
+                <PatientCard {...this.props}/> 
+                <PatientCard {...this.props}/> 
+                <PatientCard {...this.props}/> 
               </View>
             </ScrollView>
           </View>
@@ -50,7 +50,7 @@ class PatientScreen extends React.Component<IProps, IState> {
     );
   } 
 };
-export default PatientScreen;
+export default PatientListScreen;
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({

@@ -6,15 +6,22 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Icon} from 'react-native-elements';
 // Screens
+import PatientListScreen from '../screens/Root/Patient/PatientListScreen';
 import DashboardScreen from '../screens/Root/DashboardScreen';
 import AppointmentScreen from '../screens/Root/AppointmentScreen';
-import PatientScreen from '../screens/Root/PatientScreen';
 import SettingScreen from '../screens/Settings/SettingScreen';
 // colors
 import {colors} from '../assets';
 // navigation
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-const BottomTab = createBottomTabNavigator();
+type NavigatorParams = {
+  DASHBOARD: undefined;
+  APPOINTMENT: undefined;
+  PATIENT_LIST: undefined;
+  SETTINGS: undefined;
+  NEW_PATIENT: undefined;
+};
+const BottomTab = createBottomTabNavigator<NavigatorParams>();
 export default function Root() {
   return (
     <BottomTab.Navigator
@@ -49,10 +56,10 @@ export default function Root() {
         }}
       />
       <BottomTab.Screen
-        name="PATIENT"
-        component={PatientScreen}
+        name="PATIENT_LIST"
+        component={PatientListScreen}
         options={{
-          tabBarLabel: '',
+          tabBarLabel: 'PATIENT',
           tabBarIcon: ({color, size}) => (
             <View style={styles.viewStyle}>
               <Icon
@@ -82,7 +89,7 @@ export default function Root() {
         }}
       />
       <BottomTab.Screen
-        name="NEW PATIENT"
+        name="NEW_PATIENT"
         component={DashboardScreen}
         options={{
           tabBarButton: () => (
