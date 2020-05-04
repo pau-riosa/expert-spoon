@@ -10,7 +10,7 @@ import {colors} from '../../assets';
 export interface IProps {}
 
 interface IState {}
-export class InquiryCard extends React.Component<IProps, IState> {
+export class PatientCard extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
   }
@@ -18,16 +18,10 @@ export class InquiryCard extends React.Component<IProps, IState> {
   render() {
     return (     
       <Card containerStyle={styles.containerStyle}>
-        <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+        <View style={{flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center'}}>
           <View style={styles.leftContainer}>
-            <Text style={{marginBottom: 10, fontFamily: 'Roboto', fontSize: 10, color: colors.black}}>
-              TOOTH EXTRACTION 
-            </Text>
-            <Text style={{marginBottom: 10, fontFamily: 'Roboto-Regular', fontSize: 20, color: colors.black}}>
+            <Text style={styles.titleStyle}>
               Juan Dela Cruz 
-            </Text>
-            <Text style={{marginBottom: 10, fontFamily: 'Roboto', fontSize: 14, color: colors.black}}>
-              message 
             </Text>
           </View>
           <View style={styles.rightContainer}>
@@ -46,27 +40,19 @@ const styles = StyleSheet.create({
   containerStyle: {
     backgroundColor: '#FAFAFA',
     shadowColor: '#CDCDCD',
-    shadowRadius: 5,
-    shadowOffset: {width: 2, height: 2}
+    shadowRadius: 3,
+    shadowOffset: {width: 2, height: 3}
   },
   leftContainer: {
-    padding: 1, 
     width: '70%',
   },
   rightContainer: { 
-    padding: 1,
     alignItems: 'flex-end',
     width: '30%',
   },
-  rowDirection: {
-    flexDirection: 'row',
-  },
   titleStyle: {
-    fontFamily: 'Roboto-Medium',
-    fontSize: 14,
-    color: colors.ocean1,
-  },
-  buttonStyle: {
-    borderWidth: 0, 
+    fontFamily: 'Roboto-Regular', 
+    fontSize: 20, 
+    color: colors.black,
   },
 })

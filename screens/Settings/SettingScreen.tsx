@@ -34,7 +34,7 @@ class SettingScreen extends React.Component<IProps, IState> {
                 style={{ width: 150, height: 150, borderRadius: 100}}
                 source={{ uri: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80' }}
               />
-              <Text style={styles.avatarText}>Juan Dela Cruz</Text> 
+              <Text style={styles.avatarText}>Dr. Juan Dela Cruz</Text> 
             </View>
             <View style={styles.textContainer}>
               <Icon name="user" type="feather" /> 
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   avatarText: {
     fontFamily: 'Gill Sans',
     fontSize: 25,
+    padding: 10,
   },
   mainText: {
     paddingLeft: 10,

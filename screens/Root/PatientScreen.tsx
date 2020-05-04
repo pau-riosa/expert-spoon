@@ -15,33 +15,33 @@ import {
 } from 'react-native';
 import { Input, Button, Icon } from 'react-native-elements'
 import {colors} from '../../assets'
-import { InquiryCard } from '../../components/Inquiries/Card';
+import { PatientCard } from '../../components/Patients/Card';
 
 export interface IProps {
   navigation: any;
 }
 export interface IState {}
 
-class AppointmentScreen extends React.Component<IProps, IState> {
+class PatientScreen extends React.Component<IProps, IState> {
   render() {
     return (
       <View style={{ flex: 1 }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
           <View style={{ margin: 15 }}>
-            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Patient Inquiries</Text>   
+            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Patients</Text>   
           </View>
           <View style={styles.verticalContainer}>
             <ScrollView showsVerticalScrollIndicator={false}>
               <View style={styles.scrollViewVerticalStyle}>
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
+                <PatientCard /> 
+                <PatientCard /> 
+                <PatientCard /> 
+                <PatientCard /> 
+                <PatientCard /> 
+                <PatientCard /> 
+                <PatientCard /> 
+                <PatientCard /> 
               </View>
             </ScrollView>
           </View>
@@ -50,7 +50,7 @@ class AppointmentScreen extends React.Component<IProps, IState> {
     );
   } 
 };
-export default AppointmentScreen;
+export default PatientScreen;
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({

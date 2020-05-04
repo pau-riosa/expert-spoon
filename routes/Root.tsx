@@ -8,7 +8,7 @@ import {Button, Icon} from 'react-native-elements';
 // Screens
 import DashboardScreen from '../screens/Root/DashboardScreen';
 import AppointmentScreen from '../screens/Root/AppointmentScreen';
-import InquiryScreen from '../screens/Root/InquiryScreen';
+import PatientScreen from '../screens/Root/PatientScreen';
 import SettingScreen from '../screens/Settings/SettingScreen';
 // colors
 import {colors} from '../assets';
@@ -39,7 +39,7 @@ export default function Root() {
         }}
       />
       <BottomTab.Screen
-        name="CALENDAR"
+        name="APPOINTMENT"
         component={AppointmentScreen}
         options={{
           tabBarLabel: '',
@@ -49,14 +49,14 @@ export default function Root() {
         }}
       />
       <BottomTab.Screen
-        name="MESSAGES"
-        component={InquiryScreen}
+        name="PATIENT"
+        component={PatientScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
             <View style={styles.viewStyle}>
               <Icon
-                name="chat-bubble"
+                name="person"
                 type="material-community-icons"
                 size={size}
                 color={color}

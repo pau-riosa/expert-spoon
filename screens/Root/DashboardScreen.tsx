@@ -27,14 +27,25 @@ export interface IState {}
 class DashboardScreen extends React.Component<IProps, IState> {
   render() {
     return (
-      <View style={{ flex: 1 }}> 
+      <View style={{ flex: 1, flexDirection: 'column' }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
-        <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}> 
+          <Text style={{padding: 15}}>Thursday, May 20, 2020</Text>
+          <View style={styles.verticalContainer}>
+            <View style={styles.timeContainer}>
+              <Text style={styles.subText}>Appointments Today</Text>
+              <Text style={styles.numberText}>10</Text>
+            </View>
+            <View style={styles.timeContainer}>
+              <Text style={styles.subText}>Inquiries Today</Text>
+              <Text style={styles.numberText}>10</Text>
+            </View>
+          </View>
           <View style={{ marginHorizontal: 15, marginTop: 15 }}>
-            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Upcoming Appointments</Text>   
+            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Appointments Today</Text>   
           </View>
           <View style={styles.horizontalContainer}>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <ScrollView horizontal={false} showsHorizontalScrollIndicator={false}>
               <View style={styles.scrollViewHorizontalStyle}>
                 <AppointmentCard /> 
               </View>
@@ -49,23 +60,6 @@ class DashboardScreen extends React.Component<IProps, IState> {
               </View>
             </ScrollView>
           </View> 
-          <View style={{ margin: 15 }}>
-            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Patient Inquiries</Text>   
-          </View>
-          <View style={styles.verticalContainer}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-              <View style={styles.scrollViewVerticalStyle}>
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-                <InquiryCard /> 
-              </View>
-            </ScrollView>
-          </View>
         </SafeAreaView>
       </View>
     );
@@ -75,15 +69,35 @@ export default DashboardScreen;
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
+  numberText: {
+    fontFamily: 'Roboto',
+    fontSize: 40,
+    color: '#363A44'
+  },
+  timeContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderWidth: 1,
+    backgroundColor: colors.ocean3,
+    borderColor: colors.ocean3,
+    shadowColor: colors.ocean1,
+    shadowRadius: 5,
+    shadowOffset: {width: 5, height: 5}, 
+    borderRadius: 5,
+    margin: 5,
+    padding: 20,
+  },
   verticalContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1, 
-    backgroundColor: "#e5e5e5",
+    borderRadius: 5,
+    flexDirection: 'column',
+    marginHorizontal: 10,
+    flex: 0.4,
+    backgroundColor: colors.ocean5,
   },
   horizontalContainer: {
-    height: '30%', 
-    justifyContent: "center",
+    flex: 1, 
     alignItems: "center",
     backgroundColor: "#e5e5e5",
   },
@@ -95,7 +109,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   scrollViewVerticalStyle: {
-    backgroundColor: 'white',
+    backgroundColor: colors.ocean5,
     flex: 1,
     flexDirection: 'column'
   },
@@ -130,7 +144,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10, 
     fontFamily: 'Gill Sans',
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '400',
     color: '#363A44'
   },
   text: {
