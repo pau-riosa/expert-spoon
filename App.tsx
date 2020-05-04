@@ -1,8 +1,6 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
-import { Icon } from 'react-native-elements'
-import DashboardScreen from './screens/Root/DashboardScreen';
+import { SafeAreaView } from 'react-native';
 import Auth from './routes/Auth';
 import Root from './routes/Root';
 import Patient from './routes/Patient';
@@ -57,7 +55,8 @@ function StackNavigator() {
     </Stack.Navigator>
   );
 }
-function App() {
+
+export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaView style={{ flex: 0, backgroundColor: colors.ocean1 }} />
@@ -66,4 +65,3 @@ function App() {
   );
 }
 
-export default App;
