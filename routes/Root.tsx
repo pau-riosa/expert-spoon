@@ -9,6 +9,7 @@ import {Button, Icon} from 'react-native-elements';
 import DashboardScreen from '../screens/Root/DashboardScreen';
 import AppointmentScreen from '../screens/Root/AppointmentScreen';
 import InquiryScreen from '../screens/Root/InquiryScreen';
+import SettingScreen from '../screens/Settings/SettingScreen';
 // colors
 import {colors} from '../assets';
 // navigation
@@ -67,7 +68,7 @@ export default function Root() {
       />
       <BottomTab.Screen
         name="SETTINGS"
-        component={DashboardScreen}
+        component={SettingScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (

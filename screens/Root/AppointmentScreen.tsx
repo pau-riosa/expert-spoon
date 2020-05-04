@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   scrollViewVerticalStyle: {
-    backgroundColor: colors.ocean1,
+    backgroundColor: colors.ocean5,
     flex: 1,
     flexDirection: 'column'
   },
