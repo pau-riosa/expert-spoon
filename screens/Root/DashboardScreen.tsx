@@ -17,7 +17,6 @@ import { Input, Button, Icon } from 'react-native-elements'
 import {colors} from '../../assets'
 
 import { AppointmentCard } from '../../components/Appointment/Card';
-import { InquiryCard } from '../../components/Inquiries/Card';
 
 export interface IProps {
   navigation: any;
@@ -30,17 +29,7 @@ class DashboardScreen extends React.Component<IProps, IState> {
       <View style={{ flex: 1, flexDirection: 'column' }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}> 
-          <Text style={{padding: 15}}>Thursday, May 20, 2020</Text>
-          <View style={styles.verticalContainer}>
-            <View style={styles.timeContainer}>
-              <Text style={styles.subText}>Appointments Today</Text>
-              <Text style={styles.numberText}>10</Text>
-            </View>
-            <View style={styles.timeContainer}>
-              <Text style={styles.subText}>Inquiries Today</Text>
-              <Text style={styles.numberText}>10</Text>
-            </View>
-          </View>
+          <Text style={{padding: 15}}>Thursday, May 20, 2020</Text> 
           <View style={{ marginHorizontal: 15, marginTop: 15 }}>
             <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Appointments Today</Text>   
           </View>

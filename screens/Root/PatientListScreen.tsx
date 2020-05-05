@@ -14,8 +14,8 @@ import {
   Image
 } from 'react-native';
 import { Input, Button, Icon } from 'react-native-elements'
-import {colors} from '../../../assets'
-import { PatientCard } from '../../../components/Patients/Card';
+import {colors} from '../../assets'
+import { PatientCard } from '../../components/Patients/Card';
 
 export interface IProps {
   navigation: any;

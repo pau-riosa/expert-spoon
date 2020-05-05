@@ -28,23 +28,18 @@ class AppointmentScreen extends React.Component<IProps, IState> {
       <View style={{ flex: 1 }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
-          <View style={{ margin: 15 }}>
-            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Appointments</Text>   
-          </View>
           <View style={styles.verticalContainer}>
             <ScrollView showsVerticalScrollIndicator={false}>
               <View style={styles.scrollViewVerticalStyle}>
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
-                <AppointmentCard /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
               </View>
             </ScrollView>
           </View>

@@ -6,7 +6,7 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Icon} from 'react-native-elements';
 // Screens
-import PatientListScreen from '../screens/Root/Patient/PatientListScreen';
+import PatientListScreen from '../screens/Root/PatientListScreen';
 import DashboardScreen from '../screens/Root/DashboardScreen';
 import AppointmentScreen from '../screens/Root/AppointmentScreen';
 import SettingScreen from '../screens/Settings/SettingScreen';
@@ -15,36 +15,20 @@ import {colors} from '../assets';
 // navigation
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 type NavigatorParams = {
-  DASHBOARD: undefined;
   APPOINTMENT: undefined;
-  PATIENT_LIST: undefined;
+  NOTIFICATION: undefined;
   SETTINGS: undefined;
-  NEW_PATIENT: undefined;
+  NEW_APPOINTMENT: undefined;
 };
 const BottomTab = createBottomTabNavigator<NavigatorParams>();
 export default function Root() {
   return (
     <BottomTab.Navigator
-      initialRouteName="DASHBOARD"
+      initialRouteName="APPOINTMENT"
       tabBarOptions={{
         activeTintColor: colors.ocean1,
         inactiveTintColor: colors.primaryGrey,
       }}>
-      <BottomTab.Screen
-        name="DASHBOARD"
-        component={DashboardScreen}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <Icon
-              name="reorder"
-              type="material-community-icons"
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
       <BottomTab.Screen
         name="APPOINTMENT"
         component={AppointmentScreen}
@@ -56,20 +40,12 @@ export default function Root() {
         }}
       />
       <BottomTab.Screen
-        name="PATIENT_LIST"
-        component={PatientListScreen}
+        name="NOTIFICATION"
+        component={AppointmentScreen}
         options={{
-          tabBarLabel: 'PATIENT',
+          tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
-            <View style={styles.viewStyle}>
-              <Icon
-                name="person"
-                type="material-community-icons"
-                size={size}
-                color={color}
-              />
-              <View style={styles.notificationStyle} />
-            </View>
+            <Icon name="bell" size={size} type="feather" color={color} />
           ),
         }}
       />
@@ -89,7 +65,7 @@ export default function Root() {
         }}
       />
       <BottomTab.Screen
-        name="NEW_PATIENT"
+        name="NEW_APPOINTMENT"
         component={DashboardScreen}
         options={{
           tabBarButton: () => (

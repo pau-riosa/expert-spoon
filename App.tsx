@@ -28,16 +28,18 @@ function StackNavigator() {
     >
     {isSignedIn ? (
       <>
-        <Stack.Screen 
+        <Stack.Screen
           options={{ 
-            headerShown: false 
+            headerShown: true,
+            headerTitle: 'APPOINTMENTS'
           }}
           name="ROOT" 
           component={Root} 
         />
         <Stack.Screen 
           options={{ 
-            headerShown: false 
+            headerShown: true,
+            headerTitle: ''
           }} 
           name="PATIENT" 
           component={Patient} 
