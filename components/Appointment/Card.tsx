@@ -53,7 +53,7 @@ export class AppointmentCard extends React.Component<IProps, IState> {
 
 const styles = StyleSheet.create({
   containerStyle: {
-    backgroundColor: '#FAFAFA', 
+    backgroundColor: '#FFFFFF', 
     shadowColor: '#CDCDCD', 
     shadowRadius: 5, 
     shadowOffset: {width: 3, height: 5},
