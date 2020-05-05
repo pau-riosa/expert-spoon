@@ -4,7 +4,9 @@
 import * as React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 // Screens
-import PatientListScreen from '../screens/Root/PatientListScreen';
+import AppointmentMessageScreen from '../screens/Root/Appointments/AppointmentMessageScreen';
+import AppointmentInfoScreen from '../screens/Root/Appointments/AppointmentInfoScreen';
+import AppointmentAttachmentScreen from '../screens/Root/Appointments/AppointmentAttachmentScreen';
 
 type NavigatorParams = {
   APPOINTMENT_INFO: undefined;
@@ -14,22 +16,22 @@ type NavigatorParams = {
 
 const TopTab = createMaterialTopTabNavigator<NavigatorParams>();
 
-export default function Patient() {
+export default function Appointment() {
   return (
     <TopTab.Navigator initialRouteName="APPOINTMENT_INFO">
       <TopTab.Screen
         name="APPOINTMENT_INFO"
-        component={PatientListScreen}
+        component={AppointmentInfoScreen}
         options={{ title: 'INFO' }}
       />
       <TopTab.Screen
         name="APPOINTMENT_MESSAGE"
-        component={PatientListScreen}
+        component={AppointmentMessageScreen}
         options={{ title: 'MESSAGE' }}
       />
       <TopTab.Screen
         name="APPOINTMENT_ATTACHMENT"
-        component={PatientListScreen}
+        component={AppointmentAttachmentScreen}
         options={{ title: 'ATTACHMENT' }}
       />
     </TopTab.Navigator>

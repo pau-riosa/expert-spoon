@@ -14,15 +14,15 @@ import {
   Image
 } from 'react-native';
 import { Input, Button, Icon } from 'react-native-elements'
-import {colors} from '../../assets'
-import { AppointmentCard } from '../../components/Appointment/Card';
+import {colors} from '../../../assets'
+import { AppointmentCard } from '../../../components/Appointment/Card';
 
 export interface IProps {
   navigation: any;
 }
 export interface IState {}
 
-class AppointmentScreen extends React.Component<IProps, IState> {
+class AppointmentAttachmentScreen extends React.Component<IProps, IState> {
   render() {
     return (
       <View style={{ flex: 1 }}> 
@@ -31,15 +31,6 @@ class AppointmentScreen extends React.Component<IProps, IState> {
           <View style={styles.verticalContainer}>
             <ScrollView showsVerticalScrollIndicator={false}>
               <View style={styles.scrollViewVerticalStyle}>
-                <AppointmentCard {...this.props} /> 
-                <AppointmentCard {...this.props} /> 
-                <AppointmentCard {...this.props} /> 
-                <AppointmentCard {...this.props} /> 
-                <AppointmentCard {...this.props} /> 
-                <AppointmentCard {...this.props} /> 
-                <AppointmentCard {...this.props} /> 
-                <AppointmentCard {...this.props} /> 
-                <AppointmentCard {...this.props} /> 
               </View>
             </ScrollView>
           </View>
@@ -48,7 +39,7 @@ class AppointmentScreen extends React.Component<IProps, IState> {
     );
   } 
 };
-export default AppointmentScreen;
+export default AppointmentAttachmentScreen;
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({

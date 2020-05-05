@@ -14,34 +14,32 @@ import {
   Image
 } from 'react-native';
 import { Input, Button, Icon } from 'react-native-elements'
-import {colors} from '../../assets'
-import { PatientCard } from '../../components/Patients/Card';
+import {colors} from '../../../assets'
+import { AppointmentCard } from '../../../components/Appointment/Card';
 
 export interface IProps {
   navigation: any;
 }
 export interface IState {}
 
-class PatientListScreen extends React.Component<IProps, IState> {
+class AppointmentScreen extends React.Component<IProps, IState> {
   render() {
     return (
       <View style={{ flex: 1 }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
-          <View style={{ margin: 15 }}>
-            <Text style={{ fontFamily: 'Gill Sans', fontSize: 25 }}>Patients</Text>   
-          </View>
           <View style={styles.verticalContainer}>
             <ScrollView showsVerticalScrollIndicator={false}>
               <View style={styles.scrollViewVerticalStyle}>
-                <PatientCard {...this.props}/> 
-                <PatientCard {...this.props}/> 
-                <PatientCard {...this.props}/> 
-                <PatientCard {...this.props}/> 
-                <PatientCard {...this.props}/> 
-                <PatientCard {...this.props}/> 
-                <PatientCard {...this.props}/> 
-                <PatientCard {...this.props}/> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
+                <AppointmentCard {...this.props} /> 
               </View>
             </ScrollView>
           </View>
@@ -50,7 +48,7 @@ class PatientListScreen extends React.Component<IProps, IState> {
     );
   } 
 };
-export default PatientListScreen;
+export default AppointmentScreen;
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({

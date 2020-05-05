@@ -6,16 +6,15 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Icon} from 'react-native-elements';
 // Screens
-import PatientListScreen from '../screens/Root/PatientListScreen';
-import DashboardScreen from '../screens/Root/DashboardScreen';
-import AppointmentScreen from '../screens/Root/AppointmentScreen';
+import AppointmentScreen from '../screens/Root/Appointments/AppointmentScreen';
+import NotificationScreen from '../screens/Root/NotificationScreen';
 import SettingScreen from '../screens/Settings/SettingScreen';
 // colors
 import {colors} from '../assets';
 // navigation
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 type NavigatorParams = {
-  APPOINTMENT: undefined;
+  APPOINTMENT_LIST: undefined;
   NOTIFICATION: undefined;
   SETTINGS: undefined;
   NEW_APPOINTMENT: undefined;
@@ -24,13 +23,13 @@ const BottomTab = createBottomTabNavigator<NavigatorParams>();
 export default function Root() {
   return (
     <BottomTab.Navigator
-      initialRouteName="APPOINTMENT"
+      initialRouteName="APPOINTMENT_LIST"
       tabBarOptions={{
         activeTintColor: colors.ocean1,
         inactiveTintColor: colors.primaryGrey,
       }}>
       <BottomTab.Screen
-        name="APPOINTMENT"
+        name="APPOINTMENT_LIST"
         component={AppointmentScreen}
         options={{
           tabBarLabel: '',
@@ -41,7 +40,7 @@ export default function Root() {
       />
       <BottomTab.Screen
         name="NOTIFICATION"
-        component={AppointmentScreen}
+        component={NotificationScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
@@ -66,7 +65,7 @@ export default function Root() {
       />
       <BottomTab.Screen
         name="NEW_APPOINTMENT"
-        component={DashboardScreen}
+        component={AppointmentScreen}
         options={{
           tabBarButton: () => (
             <Button

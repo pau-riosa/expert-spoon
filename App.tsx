@@ -3,7 +3,7 @@ import * as React from 'react';
 import { SafeAreaView } from 'react-native';
 import Auth from './routes/Auth';
 import Root from './routes/Root';
-import Patient from './routes/Patient';
+import Appointment from './routes/Appointment';
 // colors
 import {colors} from './assets'
 // navigation 
@@ -13,7 +13,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 type NavigatorParams = {
   AUTH: undefined,
   ROOT: undefined,
-  PATIENT: undefined,
+  APPOINTMENT: undefined,
 
 }
 const isSignedIn = true;
@@ -31,7 +31,7 @@ function StackNavigator() {
         <Stack.Screen
           options={{ 
             headerShown: true,
-            headerTitle: 'APPOINTMENTS'
+            headerTitle: ''
           }}
           name="ROOT" 
           component={Root} 
@@ -41,8 +41,8 @@ function StackNavigator() {
             headerShown: true,
             headerTitle: ''
           }} 
-          name="PATIENT" 
-          component={Patient} 
+          name="APPOINTMENT" 
+          component={Appointment} 
         />
       </>
       ) : (

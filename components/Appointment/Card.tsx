@@ -20,7 +20,7 @@ export class AppointmentCard extends React.Component<IProps, IState> {
   render() {
     return (     
       <TouchableOpacity
-        onPress={() => this.props.navigation.navigate('PATIENT', { screen: 'PATIENT_INFO'})}
+        onPress={() => this.props.navigation.navigate('APPOINTMENT', { screen: 'APPOINTMENT_INFO'})}
       >
         <Card containerStyle={styles.containerStyle}>
           <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
