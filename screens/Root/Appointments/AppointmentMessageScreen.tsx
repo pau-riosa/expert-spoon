@@ -13,6 +13,7 @@ import {
   StatusBar,
   Image
 } from 'react-native';
+import { Bubble, GiftedChat, Time, Send, InputToolbar } from 'react-native-gifted-chat';
 import { Input, Button, Icon } from 'react-native-elements'
 import {colors} from '../../../assets'
 import { AppointmentCard } from '../../../components/Appointment/Card';
@@ -20,20 +21,90 @@ import { AppointmentCard } from '../../../components/Appointment/Card';
 export interface IProps {
   navigation: any;
 }
-export interface IState {}
+export interface IState {
+  messages: any[];
+}
 
 class AppointmentMessageScreen extends React.Component<IProps, IState> {
+  state = {
+    messages: []
+  }
+  componentDidMount() {
+    this.setState({
+      messages: [
+        {
+          _id: 1,
+          text: 'Hello developer',
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'React Native',
+            avatar: 'https://placeimg.com/140/140/any',
+          },
+        },
+      ],
+    })
+  }
+
+  onSend(messages = []) {
+    this.setState(previousState => ({
+      messages: GiftedChat.append(previousState.messages, messages),
+    }))
+  }
+
+  renderBubble = (props: any) => {
+    return  (
+      <Bubble
+        {...props}
+        textStyle={{
+          left: styles.bubbleText, 
+          right: styles.bubbleText, 
+        }}
+        wrapperStyle={{
+          left: styles.bubbleContainer,
+          right: styles.bubbleContainer,
+        }}
+      />
+  )}
+
+  renderTime = (props: any) => {
+    return  (
+      <Time
+        {...props}
+        timeTextStyle={{
+          right: styles.timeText,           
+          left: styles.timeText   
+        }}
+      />
+  )}
+  
+  renderSend = (props) => {
+    return (
+      <Send
+        {...props}
+        containerStyle={styles.sendContainer}
+      >
+        <Icon name='send' type='material-community-icon' size={30} color={colors.ocean1} />
+      </Send>
+    );
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
-          <View style={styles.verticalContainer}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-              <View style={styles.scrollViewVerticalStyle}>
-              </View>
-            </ScrollView>
-          </View>
+          <GiftedChat
+            alwaysShowSend={true}
+            renderBubble={this.renderBubble}
+            renderTime={this.renderTime}
+            renderSend={this.renderSend}
+            messages={this.state.messages}
+            onSend={(messages: any) => this.onSend(messages)}
+            user={{
+              _id: 1,
+            }}
+          />        
         </SafeAreaView>
       </View>
     );
@@ -43,61 +114,23 @@ export default AppointmentMessageScreen;
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
-  verticalContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1, 
-    backgroundColor: "#e5e5e5",
-  },
-  horizontalContainer: {
-    height: '30%', 
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#e5e5e5",
-  },
-  headerText: {
-    fontSize: 30,
-    textAlign: "center",
-    margin: 10,
-    color: 'white',
-    fontWeight: "bold"
-  },
-  scrollViewVerticalStyle: {
-    backgroundColor: colors.ocean5,
-    flex: 1,
-    flexDirection: 'column'
-  },
-  logoContainer: {
-    flex: 0.2,
-    flexDirection: 'row',
+  sendContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.ocean5
+    alignSelf: 'center',
+    marginRight: 15,
   },
-  flex1: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    paddingHorizontal: 15,
-    backgroundColor: colors.ocean5
-  },
-  mainText: {
+  timeText: {
+    color: '#adadad',
     fontFamily: 'Gill Sans',
-    fontSize: 50,
-    fontWeight: '300',
-    color: '#363A44'
+    fontSize: 12,
   },
-  subText: {
-    marginHorizontal: 10, 
+  bubbleText: {
+    color: colors.black,
     fontFamily: 'Gill Sans',
-    fontSize: 18,
-    fontWeight: '500',
-    color: '#363A44'
   },
-  text: {
-    fontFamily: 'Gill Sans', 
-    fontSize: 17, 
-    marginVertical: 2 
-  }
+  bubbleContainer: {
+    backgroundColor: '#ececec', 
+  },
 });
 
