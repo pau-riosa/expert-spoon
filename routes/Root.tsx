@@ -2,9 +2,9 @@
  * @format
  * @flow strict-local
  */
-import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Button, Icon} from 'react-native-elements';
+import React, { useState } from 'react';
+import {StyleSheet, View, Text} from 'react-native';
+import {Button, Icon, Overlay} from 'react-native-elements';
 // Screens
 import AppointmentScreen from '../screens/Root/Appointments/AppointmentScreen';
 import NotificationScreen from '../screens/Root/NotificationScreen';
@@ -13,6 +13,9 @@ import SettingScreen from '../screens/Settings/SettingScreen';
 import {colors} from '../assets';
 // navigation
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+// components
+import {CustomModal} from '../components/CustomModal';
+import {AppointmentForm} from '../components/Appointment/Form';
 type NavigatorParams = {
   APPOINTMENT_LIST: undefined;
   NOTIFICATION: undefined;
@@ -21,7 +24,20 @@ type NavigatorParams = {
 };
 const BottomTab = createBottomTabNavigator<NavigatorParams>();
 export default function Root() {
+
+  const [visible, setVisible] = useState(false);
+
+  const toggleOverlay = () => {
+    setVisible(!visible);
+  }
   return (
+    <>
+    <CustomModal 
+      children={<AppointmentForm/>} 
+      visible={visible} 
+      onBackdropPress={toggleOverlay} 
+      overlayStyle={{ width: '90%', borderRadius: 5}} 
+    />
     <BottomTab.Navigator
       initialRouteName="APPOINTMENT_LIST"
       tabBarOptions={{
@@ -77,14 +93,17 @@ export default function Root() {
                   color="white"
                 />
               }
+              onPress={toggleOverlay}
               buttonStyle={styles.buttonStyle}
             />
           ),
         }}
       />
     </BottomTab.Navigator>
+    </>
   );
 }
+
 
 const styles = StyleSheet.create({
   viewStyle: {

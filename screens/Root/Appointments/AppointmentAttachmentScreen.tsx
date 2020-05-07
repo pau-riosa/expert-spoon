@@ -28,12 +28,11 @@ class AppointmentAttachmentScreen extends React.Component<IProps, IState> {
       <View style={{ flex: 1 }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
-          <View style={styles.verticalContainer}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-              <View style={styles.scrollViewVerticalStyle}>
-              </View>
-            </ScrollView>
-          </View>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.scrollViewVerticalStyle}>
+              <Button title="Add Attachment" titleStyle={styles.titleStyle} buttonStyle={styles.buttonStyle}/>
+            </View>
+          </ScrollView>
         </SafeAreaView>
       </View>
     );
@@ -43,43 +42,21 @@ export default AppointmentAttachmentScreen;
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
-  verticalContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1, 
-    backgroundColor: "#e5e5e5",
+  titleStyle: {
+    fontFamily: 'Gill Sans',
+    fontSize: 16,
   },
-  horizontalContainer: {
-    height: '30%', 
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#e5e5e5",
-  },
-  headerText: {
-    fontSize: 30,
-    textAlign: "center",
-    margin: 10,
-    color: 'white',
-    fontWeight: "bold"
+  buttonStyle: {
+    alignSelf: 'flex-end',
+    borderRadius: 5,
+    backgroundColor: colors.ocean1,
+    paddingHorizontal: 10,
   },
   scrollViewVerticalStyle: {
     backgroundColor: colors.ocean5,
     flex: 1,
-    flexDirection: 'column'
-  },
-  logoContainer: {
-    flex: 0.2,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.ocean5
-  },
-  flex1: {
-    flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    paddingHorizontal: 15,
-    backgroundColor: colors.ocean5
+    padding: 20,
   },
   mainText: {
     fontFamily: 'Gill Sans',
