@@ -2,10 +2,10 @@
  * @format
  * @flow strict-local
  */
-import React from 'react';
-import {Image, StyleSheet, Text, View, Dimensions, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {Image, StyleSheet, Text, View, Dimensions, TouchableOpacity, TextInput} from 'react-native';
 import {Label, Input, Button, Icon} from 'react-native-elements';
-import DatePicker from 'react-native-datepicker';
+import CustomDatePicker from '../CustomDatePicker';
 import {colors} from '../../assets';
 
 export interface IProps {
@@ -13,12 +13,19 @@ export interface IProps {
 }
 
 interface IState {}
+
 export class AppointmentForm extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props);
+  state = {
+    dateString: "",
+    date: new Date(),
+    show: false
+  };
+  onChange = (event: any, selectedDate: any) => {
+    this.setState({dateString: selectedDate.toString(), date: selectedDate})
   }
 
   render() {
+    const input = React.createRef()
     return (     
       <View style={{flex: 1, flexDirection: 'column'}}>
         <Text style={styles.labelStyle}>Name</Text>
@@ -32,30 +39,7 @@ export class AppointmentForm extends React.Component<IProps, IState> {
           inputContainerStyle={styles.inputContainerStyle}
         />
         <Text style={styles.labelStyle}>Date</Text>
-        <DatePicker
-          style={styles.datepickerStyle}
-          date={'2016-05-07'} 
-          showIcon={false}
-          mode="date"
-          placeholder=" "
-          format="YYYY-MM-DD"
-          minDate="0000-05-01"
-          maxDate="2030-06-01"
-          confirmBtnText="Confirm"
-          cancelBtnText="Cancel"
-          iconComponent={
-            <Icon
-              name="calendar"
-              type="feather"
-              size={24}
-              color={colors.ocean1}
-            />
-          }
-          customStyles={{
-            placeholderText: styles.datepickerPlaceholderText,
-            dateInput: styles.datepickerDateInput
-          }}
-        />
+        <CustomDatePicker />
         <Text style={styles.labelStyle}>Description</Text>
         <Input
           multiline={true}

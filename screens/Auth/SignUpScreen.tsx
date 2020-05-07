@@ -5,7 +5,7 @@
 import * as React from 'react';
 import {SafeAreaView, View, Text, StatusBar, ScrollView} from 'react-native';
 // @ts-ignore
-import DatePicker from 'react-native-datepicker';
+import CustomDatePicker from '../../components/CustomDatePicker';
 import {CheckBox, Input, Button, Icon} from 'react-native-elements';
 import {colors} from '../../assets';
 import {signup} from './styles';
@@ -42,33 +42,11 @@ class SignUpScreen extends React.Component<IProps, IState> {
               inputContainerStyle={signup.inputContainerStyle}
             />
             <Input
-              placeholder="First_name"
+              placeholder="Surname"
               inputStyle={signup.inputStyle}
               inputContainerStyle={signup.inputContainerStyle}
             />
-            <DatePicker
-              style={signup.datepickerStyle}
-              showIcon={false}
-              mode="date"
-              placeholder="Date of birth"
-              format="YYYY-MM-DD"
-              minDate="0000-05-01"
-              maxDate="2030-06-01"
-              confirmBtnText="Confirm"
-              cancelBtnText="Cancel"
-              iconComponent={
-                <Icon
-                  name="calendar"
-                  type="feather"
-                  size={24}
-                  color={colors.ocean1}
-                />
-              }
-              customStyles={{
-                placeholderText: signup.datepickerPlaceholderText,
-                dateInput: signup.datepickerDateInput
-              }}
-            />
+            <CustomDatePicker placeholder="Date of Birth"/>
             <Input
               placeholder="Email"
               inputStyle={signup.inputStyle}
