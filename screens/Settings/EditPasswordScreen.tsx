@@ -22,22 +22,22 @@ export interface IProps {
 }
 export interface IState {}
 
-export default class EditProfileScreen extends React.Component<IProps, IState> {
+export default class EditPasswordScreen extends React.Component<IProps, IState> {
   render() {
     return (
       <View style={{flex: 1, flexDirection: 'column'}}>
-        <Text style={styles.labelStyle}>First Name</Text>
+        <Text style={styles.labelStyle}>New Password</Text>
         <Input
+          secureTextEntry={true}
           inputStyle={styles.inputStyle}
           inputContainerStyle={styles.inputContainerStyle}
         />
-        <Text style={styles.labelStyle}>Surname</Text>
+        <Text style={styles.labelStyle}>Confirm Password</Text>
         <Input
+          secureTextEntry={true}
           inputStyle={styles.inputStyle}
           inputContainerStyle={styles.inputContainerStyle}
         />
-        <Text style={styles.labelStyle}>Birthdate</Text>
-        <CustomDatePicker />
         <Button title="Save" buttonStyle={styles.buttonStyle} />
       </View>
     );

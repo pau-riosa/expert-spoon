@@ -17,6 +17,7 @@ import {
 import { Input, Button, Icon } from 'react-native-elements'
 import {colors} from '../../assets'
 import  EditProfileScreen  from './EditProfileScreen';
+import  EditPasswordScreen  from './EditPasswordScreen';
 import { InquiryCard } from '../../components/Inquiries/Card';
 import {CustomModal} from '../../components/CustomModal';
 
@@ -27,14 +28,21 @@ export interface IState {}
 
 class SettingScreen extends React.Component<IProps, IState> {
   state = {
-    show: false
+    showProfile: false,
+    showPassword: false
   }
   
-  showOverlay = () => {
-    this.setState({ show: true}) 
+  showProfileOverlay = () => {
+    this.setState({ showProfile: true}) 
   }
-  hideOverlay = () => {
-    this.setState({ show: false}) 
+  hideProfileOverlay = () => {
+    this.setState({ showProfile: false}) 
+  }
+  showPasswordOverlay = () => {
+    this.setState({ showPassword: true}) 
+  }
+  hidePasswordOverlay = () => {
+    this.setState({ showPassword: false}) 
   }
   render() {
     return (
@@ -42,8 +50,15 @@ class SettingScreen extends React.Component<IProps, IState> {
         <CustomModal
           title="Update Profile"
           children={<EditProfileScreen/>} 
-          visible={this.state.show} 
-          onBackdropPress={this.hideOverlay} 
+          visible={this.state.showProfile} 
+          onBackdropPress={this.hideProfileOverlay} 
+          overlayStyle={{ width: '90%', borderRadius: 5}} 
+        />
+        <CustomModal
+          title="Change Password"
+          children={<EditPasswordScreen/>} 
+          visible={this.state.showPassword} 
+          onBackdropPress={this.hidePasswordOverlay} 
           overlayStyle={{ width: '90%', borderRadius: 5}} 
         />
       <View style={{ flex: 1 }}> 
@@ -57,9 +72,13 @@ class SettingScreen extends React.Component<IProps, IState> {
               />
               <Text style={styles.avatarText}>Juan Dela Cruz</Text> 
             </View>
-            <TouchableOpacity style={styles.textContainer} onPress={this.showOverlay}>
+            <TouchableOpacity style={styles.textContainer} onPress={this.showProfileOverlay}>
               <Icon name="user" type="feather" /> 
               <Text style={styles.mainText}>Profile</Text> 
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.textContainer} onPress={this.showPasswordOverlay}>
+              <Icon name="lock" type="feather" /> 
+              <Text style={[styles.mainText]}>Change Password</Text> 
             </TouchableOpacity>
             <TouchableOpacity style={styles.textContainer}>
               <Icon name="power" type="feather" iconStyle={styles.logOutText} /> 
