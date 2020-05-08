@@ -2,7 +2,7 @@
  * @format
  * @flow strict-local
  */
-import React, {useState} from 'react';
+import React from 'react';
 import {Platform, Text, StyleSheet, TextInput, View, TouchableOpacity} from 'react-native';
 import {Overlay, Header} from 'react-native-elements';
 import DateTimePicker from '@react-native-community/datetimepicker';
