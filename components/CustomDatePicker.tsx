@@ -27,6 +27,7 @@ class CustomDatePicker extends React.Component<IProps, IState> {
   };
 
   onChange = (event: any, selectedDate: any) => {
+    console.log(selectedDate)
     this.setState({dateString: moment(selectedDate).format('YYYY-MM-DD'), date: selectedDate})
   }
 
@@ -67,14 +68,18 @@ class CustomDatePicker extends React.Component<IProps, IState> {
             />
           </Overlay>
         ) : (
-          <DateTimePicker
-            value={this.state.date}
-            mode={'date'}
-            is24Hour={true}
-            display="default"
-            onChange={this.onChange}
-            style={{ backgroundColor: 'white' }}
-          />
+          <>
+            {this.state.show && 
+            <DateTimePicker
+              value={this.state.date}
+              mode={'date'}
+              is24Hour={true}
+              display="default"
+              onChange={this.onChange}
+              style={{ backgroundColor: 'white' }}
+            />
+            }
+          </>
         )}
       </View>
     );
