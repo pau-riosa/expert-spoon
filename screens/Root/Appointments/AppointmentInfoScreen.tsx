@@ -15,7 +15,9 @@ import {
 } from 'react-native';
 import { Input, Button, Icon } from 'react-native-elements'
 import {colors} from '../../../assets'
+import { AppointmentForm} from '../../../components/Appointment/Form';
 import { AppointmentCard } from '../../../components/Appointment/Card';
+import {CustomModal} from '../../../components/CustomModal';
 
 export interface IProps {
   navigation: any;
@@ -23,8 +25,26 @@ export interface IProps {
 export interface IState {}
 
 class AppointmentInfoScreen extends React.Component<IProps, IState> {
+  state = {
+    show: false
+  }  
+  showOverlay = () => {
+    this.setState({ show: true}) 
+  }
+  hideOverlay = () => {
+    this.setState({ show: false}) 
+  }
+
   render() {
     return (
+      <>  
+        <CustomModal
+          title="Update Appointment"
+          children={<AppointmentForm/>} 
+          visible={this.state.show} 
+          onBackdropPress={this.hideOverlay} 
+          overlayStyle={{ width: '90%', borderRadius: 5}} 
+        />
       <View style={{ flex: 1 }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
@@ -74,12 +94,13 @@ Nulla pharetra diam sit amet nisl. Ut lectus arcu bibendum at. Vitae suscipit te
                 </Text>
               </ScrollView>
               <View style={{ flex: 1, flexDirection: 'row', paddingVertical: 20, paddingHorizontal: 5}}>
-                <Button title="UPDATE" type="outline" buttonStyle={styles.buttonStyle} titleStyle={styles.titleStyle} />
+                <Button title="UPDATE" type="outline" buttonStyle={styles.buttonStyle} titleStyle={styles.titleStyle} onPress={this.showOverlay}/>
               </View>
             </View>
           </ScrollView>
         </SafeAreaView>
       </View>
+        </>
     );
   } 
 };

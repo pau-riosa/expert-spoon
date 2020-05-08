@@ -32,8 +32,9 @@ export default function Root() {
   }
   return (
     <>
-    <CustomModal 
-      children={<AppointmentForm/>} 
+    <CustomModal
+      title="Create Appointment"
+      children={<AppointmentForm />} 
       visible={visible} 
       onBackdropPress={toggleOverlay} 
       overlayStyle={{ width: '90%', borderRadius: 5}} 

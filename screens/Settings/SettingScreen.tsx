@@ -11,11 +11,14 @@ import {
   View,
   Text,
   StatusBar,
-  Image
+  Image,
+  TouchableOpacity
 } from 'react-native';
 import { Input, Button, Icon } from 'react-native-elements'
 import {colors} from '../../assets'
+import  EditProfileScreen  from './EditProfileScreen';
 import { InquiryCard } from '../../components/Inquiries/Card';
+import {CustomModal} from '../../components/CustomModal';
 
 export interface IProps {
   navigation: any;
@@ -23,8 +26,26 @@ export interface IProps {
 export interface IState {}
 
 class SettingScreen extends React.Component<IProps, IState> {
+  state = {
+    show: false
+  }
+  
+  showOverlay = () => {
+    this.setState({ show: true}) 
+  }
+  hideOverlay = () => {
+    this.setState({ show: false}) 
+  }
   render() {
     return (
+      <>
+        <CustomModal
+          title="Update Profile"
+          children={<EditProfileScreen/>} 
+          visible={this.state.show} 
+          onBackdropPress={this.hideOverlay} 
+          overlayStyle={{ width: '90%', borderRadius: 5}} 
+        />
       <View style={{ flex: 1 }}> 
         <StatusBar barStyle="dark-content" backgroundColor={colors.ocean1}  />
         <SafeAreaView style={{ flex: 1, backgroundColor: colors.ocean5 }}>
@@ -34,19 +55,20 @@ class SettingScreen extends React.Component<IProps, IState> {
                 style={{ width: 150, height: 150, borderRadius: 100}}
                 source={{ uri: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80' }}
               />
-              <Text style={styles.avatarText}>Dr. Juan Dela Cruz</Text> 
+              <Text style={styles.avatarText}>Juan Dela Cruz</Text> 
             </View>
-            <View style={styles.textContainer}>
+            <TouchableOpacity style={styles.textContainer} onPress={this.showOverlay}>
               <Icon name="user" type="feather" /> 
               <Text style={styles.mainText}>Profile</Text> 
-            </View>
-            <View style={styles.textContainer}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.textContainer}>
               <Icon name="power" type="feather" iconStyle={styles.logOutText} /> 
               <Text style={[styles.mainText, styles.logOutText]}>Log Out</Text> 
-            </View>
+            </TouchableOpacity>
           </View>
         </SafeAreaView>
       </View>
+        </>
     );
   } 
 };

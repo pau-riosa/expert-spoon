@@ -50,6 +50,7 @@ class CustomDatePicker extends React.Component<IProps, IState> {
         </TouchableOpacity>
         {Platform.OS === 'ios' ? (
           <Overlay isVisible={this.state.show} onBackdropPress={this.hideOverlay} overlayStyle={styles.overlayStyle}>
+            <>
             <View style={styles.headerStyle}>
               <TouchableOpacity onPress={this.hideOverlay}>
                 <Text style={{ paddingHorizontal: 15 }}>Cancel</Text>
@@ -66,6 +67,7 @@ class CustomDatePicker extends React.Component<IProps, IState> {
               onChange={this.onChange}
               style={{ backgroundColor: 'white' }}
             />
+            </>
           </Overlay>
         ) : (
           <>

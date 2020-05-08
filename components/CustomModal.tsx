@@ -3,6 +3,7 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {Icon, Button, Overlay} from 'react-native-elements';
 
 export interface IProps {
+  title?: string;
   visible: boolean;
   onBackdropPress: () => any;
   overlayStyle: any;
@@ -27,7 +28,7 @@ export class CustomModal extends React.Component<IProps, IState> {
         <ScrollView>
           <Icon name='close' type='font-awesome' onPress={onBackdropPress} iconStyle={{ paddingHorizontal: 10, alignSelf: 'flex-end'}}/>
           <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-            <Text style={styles.mainText}>Create Appointment</Text>
+            <Text style={styles.mainText}>{this.props.title || ""}</Text>
           </View>
           {children}
         </ScrollView>

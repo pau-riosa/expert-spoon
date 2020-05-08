@@ -2,30 +2,29 @@
  * @format
  * @flow strict-local
  */
-import React, {useState} from 'react';
-import {Image, StyleSheet, Text, View, Dimensions, TouchableOpacity, TextInput} from 'react-native';
-import {Label, Input, Button, Icon} from 'react-native-elements';
-import CustomDatePicker from '../CustomDatePicker';
-import {colors} from '../../assets';
+import * as React from 'react';
+import {
+  Dimensions,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+  Text,
+  StatusBar,
+  Image
+} from 'react-native';
+import CustomDatePicker from '../../components/CustomDatePicker';
+import { Input, Button, Icon } from 'react-native-elements'
+import {colors} from '../../assets'
 
 export interface IProps {
   navigation: any;
 }
+export interface IState {}
 
-interface IState {}
-
-export class AppointmentForm extends React.Component<IProps, IState> {
-  state = {
-    dateString: "",
-    date: new Date(),
-    show: false
-  };
-  onChange = (event: any, selectedDate: any) => {
-    this.setState({dateString: selectedDate.toString(), date: selectedDate})
-  }
-
+export default class EditProfileScreen extends React.Component<IProps, IState> {
   render() {
-    return (     
+    return (
       <View style={{flex: 1, flexDirection: 'column'}}>
         <Text style={styles.labelStyle}>Name</Text>
         <Input
@@ -48,8 +47,8 @@ export class AppointmentForm extends React.Component<IProps, IState> {
         <Button title="Submit" buttonStyle={styles.buttonStyle} />
       </View>
     );
-  }
-}
+  } 
+};
 
 const styles = StyleSheet.create({
   datepickerStyle: {
